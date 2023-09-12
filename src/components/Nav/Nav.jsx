@@ -5,12 +5,23 @@ import styledNav from "./Nav.module.css";
 const Nav = (props) => {
   return (
     <div className={styledNav.container}>
-      <NavLink to="/home">
-        <button>Home</button>
-      </NavLink>
-      <NavLink to="/about">
-        <button>About</button>
-      </NavLink>
+      <div className={styledNav.Bcontainer}>
+        <div className={styledNav.btnCont}>
+          <NavLink to="/home">
+            <button>Home</button>
+          </NavLink>
+        </div>
+        <div className={styledNav.btnCont}>
+          <NavLink to="/about">
+            <button>About</button>
+          </NavLink>
+        </div>
+        <div className={styledNav.btnCont}>
+          <NavLink to="/favorites">
+            <button>Favorites</button>
+          </NavLink>
+        </div>
+      </div>
       <SearchBar onSearch={props.onSearch} />
     </div>
   );

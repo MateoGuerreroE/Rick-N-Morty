@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.form {
+  width: 20pc;
+  height: 11em;
+  border: 1px solid black;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.button {
+  margin-top: 2vh;
+  width: 30%;
+  align-self: center;
+  border-radius: 8px;
+  background-color: beige;
+  font-weight: bold;
+  transition: transform 0.2s;
+  transition: background 0.08s ease-in-out;
+}
+
+.button:hover {
+  background-color: rgb(241, 197, 143);
+  transform: scale(1.05);
+}
+
+.input {
+  border-radius: 0.3rem;
+  background-color: rgb(255, 255, 255);
+  border: 1px black solid;
+  padding: 5px;
+}
+
+.text {
+  color: red;
+  font-size: small;
+  display: flex;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  width: 100%;
+  height: 18px;
+}

@@ -1,8 +1,8 @@
 .divContainer {
   background-color: aquamarine;
-  height: 4pc;
+  height: 100%;
   display: flex;
-  width: 50pc;
+  width: 60%;
   justify-content: center;
 }
 

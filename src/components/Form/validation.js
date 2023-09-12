@@ -9,8 +9,7 @@ export function validate(input) {
     obj.email = "Escribe un email correcto";
   }
   if (!regexPassword.test(input.password)) {
-    obj.password =
-      "La clave debe contener un numero y estar entre 6 a 10 digitos";
+    obj.password = "Debe contener un numero y estar entre 6 a 10 digitos";
   }
 
   return obj;

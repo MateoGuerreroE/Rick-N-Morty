@@ -1,10 +1,36 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  height: 6vh;
 }
 
-.innactive {
+.Bcontainer {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(174, 243, 255);
 }
 
-.active {
+.btnCont {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.Bcontainer button {
+  margin: 15px;
+  width: 15pc;
+  height: 2pc;
+  border-radius: 8px;
+  background-color: beige;
+  font-family: "Roboto", sans-serif;
+  font-size: 1pc;
+  font-weight: bold;
+  transition: transform 0.2s;
+  transition: background 0.08s ease-in-out;
+}
+
+.Bcontainer button:hover {
+  background-color: rgb(241, 197, 143);
+  transform: scale(1.05);
 }
