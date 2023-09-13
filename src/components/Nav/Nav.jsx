@@ -6,21 +6,17 @@ const Nav = (props) => {
   return (
     <div className={styledNav.container}>
       <div className={styledNav.Bcontainer}>
-        <div className={styledNav.btnCont}>
-          <NavLink to="/home">
-            <button>Home</button>
-          </NavLink>
-        </div>
-        <div className={styledNav.btnCont}>
-          <NavLink to="/about">
-            <button>About</button>
-          </NavLink>
-        </div>
-        <div className={styledNav.btnCont}>
-          <NavLink to="/favorites">
-            <button>Favorites</button>
-          </NavLink>
-        </div>
+        <NavLink to="/home">
+          <button>Home</button>
+        </NavLink>
+
+        <NavLink to="/about">
+          <button>About</button>
+        </NavLink>
+
+        <NavLink to="/favorites">
+          <button>Favorites</button>
+        </NavLink>
       </div>
       <SearchBar onSearch={props.onSearch} />
     </div>

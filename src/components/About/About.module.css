@@ -4,6 +4,7 @@
   margin: auto;
   text-align: center;
   margin-top: 10vw;
+  backdrop-filter: blur(10px);
 }
 
 .title {

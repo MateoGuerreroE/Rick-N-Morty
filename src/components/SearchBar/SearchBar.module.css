@@ -1,21 +1,21 @@
 .divContainer {
-  background-color: aquamarine;
+  background-color: #cc5500;
   height: 100%;
   display: flex;
-  width: 60%;
-  justify-content: center;
+  width: 40%;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .divContainer button {
-  margin: 15px;
-  width: 15pc;
+  width: 10vw;
   height: 2pc;
   border-radius: 8px;
-  background-color: beige;
+  background-color: #cc5500;
+  border: 2px solid black;
   font-family: "Roboto", sans-serif;
   font-size: 1pc;
   font-weight: bold;
-  transition: transform 0.2s;
   transition: background 0.08s ease-in-out;
 }
 
@@ -28,11 +28,9 @@
   font-family: "Roboto", sans-serif;
   color: #333;
   font-size: 0.8rem;
-  margin-left: 5.5rem;
-  margin-top: 0.98rem;
   padding: 0.5rem 1rem;
   border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
+  background-color: #f3ab0e;
   border: none;
   width: 15%;
   height: 50%;
