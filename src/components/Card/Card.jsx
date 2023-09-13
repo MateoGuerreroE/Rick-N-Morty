@@ -46,10 +46,10 @@ function Card(props) {
         <Link to={`/detail/${props.id}`}>
           <h2>{props.name}</h2>
         </Link>
-
-        <h2>{props.species}</h2>
-        <h2>{props.gender}</h2>
-
+        <div className={styledCard.information}>
+          <h2>{props.species}</h2>
+          <h2>{props.gender}</h2>
+        </div>
         <img src={props.image} alt="" />
       </div>
     </div>

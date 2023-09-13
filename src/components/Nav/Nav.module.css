@@ -1,13 +1,16 @@
 .container {
   display: flex;
   height: 6vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .Bcontainer {
   width: 60%;
   display: flex;
   flex-direction: row;
-  background-color: #3f7dac;
+  background-color: #43938a;
   align-items: center;
   justify-content: space-around;
 }
@@ -17,7 +20,7 @@
   height: 2pc;
   border-radius: 8px;
   border: 2px solid black;
-  background-color: #3f7dac;
+  background-color: #43938a;
   font-family: "Roboto", sans-serif;
   font-size: 1pc;
   font-weight: bold;

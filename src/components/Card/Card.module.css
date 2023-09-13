@@ -11,10 +11,16 @@
   box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.2),
     0 2px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: rgba(255, 255, 255, 0.12);
+  &:hover {
+    box-shadow: 10px 10px 18px 0 rgba(0, 0, 0, 0.3),
+      0 2px 20px 0 rgba(0, 0, 0, 0.3);
+  }
 }
 
 .divCard img {
-  border-radius: 0.5pc;
+  border-radius: 0 0 0.5pc 0.5pc;
+  border: black 2px solid;
+  border-top: 0px;
 }
 
 .btns {
@@ -45,8 +51,28 @@
 
 .data a {
   margin: 25px 0 0 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.data a h2 {
+  font-size: xx-large;
+  margin: 0px;
+  height: 106px;
 }
 
 .data h2 {
-  margin: 15px;
+  margin: 0;
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  border: black solid 2px;
+  border-bottom: 0px;
+  border-radius: 0.5pc 0.5pc 0 0;
+  background-color: rgba(0, 0, 0, 0.363);
+  color: rgb(236, 236, 236);
 }

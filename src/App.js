@@ -19,7 +19,7 @@ function App(props) {
 
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate(); // Command for nav
-  const [access, setAccess] = useState(true); // starts access as false //! SET AS TRUE FOR DEVELOPMENT PRPSES
+  const [access, setAccess] = useState(false); // starts access as false //! SET AS TRUE FOR DEVELOPMENT PRPSES
 
   const EMAIL = "mateof1223@gmail.com"; // Simulated database
   const PASSWORD = "123456";

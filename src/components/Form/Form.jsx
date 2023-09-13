@@ -34,7 +34,7 @@ export default function Form(props) {
   return (
     <div className={styledForm.container}>
       <form className={styledForm.form} onSubmit={handleSubmit}>
-        <label>EMAIL: </label>
+        <label>EMAIL</label>
         <input
           type="text"
           placeholder="Email..."
@@ -45,7 +45,7 @@ export default function Form(props) {
         />
         <p className={styledForm.text}>{errors.email ? errors.email : null}</p>
 
-        <label>PASSWORD: </label>
+        <label>PASSWORD</label>
         <input
           type="password"
           placeholder="Clave..."
