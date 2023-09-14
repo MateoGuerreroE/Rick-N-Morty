@@ -2,3 +2,19 @@
   text-align: center;
   height: 100vh;
 }
+
+.button {
+  position: absolute;
+  left: 1%;
+  top: 7vh;
+  border: 0;
+  background-image: url("./content/3596149.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: inherit;
+  width: 4vw;
+  height: 4vh;
+  &:hover {
+    cursor: pointer;
+  }
+}

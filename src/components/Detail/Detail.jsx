@@ -36,8 +36,8 @@ export default function Detail() {
         <div className={styledDet.data}>
           <h1>{character.name}</h1>
           <h3>STATUS | {character.status}</h3>
-          <h3>GENDER | {character.species}</h3>
-          <h3>SPECIE | {character.gender}</h3>
+          <h3>GENDER | {character.gender}</h3>
+          <h3>SPECIE | {character.species}</h3>
           {character.origin ? <h3>ORIGIN | {character.origin.name}</h3> : null}
         </div>
         <img src={character.image} alt={character.name} />

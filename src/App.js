@@ -60,6 +60,12 @@ function App(props) {
     }
   }
 
+  function logOut() {
+    setAccess(false);
+    navigate("/");
+    setCharacters([]);
+  }
+
   // ON LOAD
 
   useEffect(() => {
@@ -72,6 +78,9 @@ function App(props) {
   return (
     <div className="App">
       {useLocation().pathname === "/" ? null : <Nav onSearch={onSearch} />}
+      {useLocation().pathname === "/" ? null : (
+        <button className="button" onClick={logOut} />
+      )}
       <Routes>
         <Route
           path="/home"

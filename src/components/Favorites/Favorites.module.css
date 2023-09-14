@@ -1,0 +1,43 @@
+.container {
+  height: 94vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardCont {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1em;
+  padding: 2vw;
+  margin: 2vw;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30vw;
+  height: 4vh;
+  align-self: center;
+  position: absolute;
+  align-items: center;
+  border: solid black 2px;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+.filter select {
+  width: 30%;
+  height: 50%;
+  text-align: center;
+  border: 2px solid black;
+  font-weight: bold;
+  border-radius: 7px;
+  outline: none;
+  font-size: medium;
+  appearance: none;
+  background: url("../../content/60995.png") 96% / 10% no-repeat #f3ab0e;
+}

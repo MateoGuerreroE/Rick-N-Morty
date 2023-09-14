@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import { filterCards, orderCards } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import styledFav from "./Favorites.module.css";
 
 function Favorites(props) {
   function closeFav(id) {
@@ -25,8 +26,8 @@ function Favorites(props) {
   useEffect(() => () => dispatch(filterCards("ALL")), []);
 
   return (
-    <div>
-      <div>
+    <div className={styledFav.container}>
+      <div className={styledFav.filter}>
         <select onChange={handleOrder}>
           <option value="A">Ascendente</option>
           <option value="D">Descendente</option>
@@ -39,20 +40,22 @@ function Favorites(props) {
           <option value="unknown">Unknown</option>
         </select>
       </div>
-      {props.myFavorites.map((item) => (
-        <Card
-          key={item.id}
-          id={item.id}
-          name={item.name}
-          species={item.species}
-          gender={item.gender}
-          image={item.image}
-          onClose={() => {
-            closeFav(item.id);
-            props.onClose(item.id);
-          }}
-        />
-      ))}
+      <div className={styledFav.cardCont}>
+        {props.myFavorites.map((item) => (
+          <Card
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            species={item.species}
+            gender={item.gender}
+            image={item.image}
+            onClose={() => {
+              closeFav(item.id);
+              props.onClose(item.id);
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
