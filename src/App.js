@@ -35,7 +35,7 @@ function App(props) {
   }
 
   function onSearch(id) {
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
         if (data.name) {
           let already = false;
@@ -47,7 +47,7 @@ function App(props) {
             // ^ El valor que ya tenia
           }
         } else {
-          window.alert("¡Ingrese un ID!");
+          window.alert("¡Ingrese un ID valido!");
         }
       })
       .catch((error) => alert("No existe ese ID, " + error));
