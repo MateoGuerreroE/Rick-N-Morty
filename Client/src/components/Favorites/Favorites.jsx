@@ -24,6 +24,8 @@ function Favorites(props) {
   }
 
   useEffect(() => () => dispatch(filterCards("ALL")), []);
+  //! TESTING
+  useEffect(() => console.log("favorites", props.myFavorites), []);
 
   return (
     <div className={styledFav.container}>

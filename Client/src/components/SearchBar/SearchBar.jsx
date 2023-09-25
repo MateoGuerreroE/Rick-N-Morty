@@ -22,7 +22,7 @@ export default function SearchBar(props) {
         type="search"
         value={id}
         onChange={handleChange}
-        placeholder="Introduce ID..."
+        placeholder="ID..."
       />
       <button onClick={sendID}>Add Character</button>
     </div>

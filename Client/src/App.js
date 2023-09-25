@@ -21,8 +21,8 @@ function App(props) {
   const navigate = useNavigate(); // Command for nav
   const [access, setAccess] = useState(false); // starts access as false //! SET AS TRUE FOR DEVELOPMENT PRPSES
 
-  const EMAIL = "mateof1223@gmail.com"; // Simulated database
-  const PASSWORD = "123456";
+  // const EMAIL = "mateof1223@gmail.com"; // Simulated database
+  // const PASSWORD = "123456";
 
   // HANDLERS OR MODIFYERS
 
@@ -31,7 +31,9 @@ function App(props) {
   }
 
   function onClose(id) {
-    setCharacters((chars) => chars.filter((char) => char.id !== parseInt(id)));
+    setCharacters((chars) => chars.filter((char) => char.id !== id));
+    //? This was changed after express just removed parseInt, not working with it.
+    //? as char.id is now string
   }
 
   function onSearch(id) {
@@ -52,12 +54,24 @@ function App(props) {
       })
       .catch((error) => alert("No existe ese ID, " + error));
   }
+  // function login(userData) {
+  //   //  userData has to be an object
+  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   }
+  // }
+
   function login(userData) {
-    //  userData has to be an object
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/home");
-    }
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
+        const { access } = data;
+        setAccess(data);
+        access && navigate("/home");
+      })
+      .catch((error) => console.log("El pepe"));
   }
 
   function logOut() {
