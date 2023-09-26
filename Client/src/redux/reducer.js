@@ -33,7 +33,11 @@ export default function reducer(state = initialState, action) {
     //     allCharacters: filteredFavs,
     //   };
     case REMOVE_FAV:
-      return { ...state, myFavorites: action.payload, allCharacters: action };
+      return {
+        ...state,
+        myFavorites: action.payload,
+        allCharacters: action.payload,
+      };
     case FILTER:
       return {
         ...state,

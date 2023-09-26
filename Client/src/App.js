@@ -21,9 +21,6 @@ function App(props) {
   const navigate = useNavigate(); // Command for nav
   const [access, setAccess] = useState(false); // starts access as false //! SET AS TRUE FOR DEVELOPMENT PRPSES
 
-  // const EMAIL = "mateof1223@gmail.com"; // Simulated database
-  // const PASSWORD = "123456";
-
   // HANDLERS OR MODIFYERS
 
   function onCloseFav(id) {
@@ -36,31 +33,33 @@ function App(props) {
     //? as char.id is now string
   }
 
-  function onSearch(id) {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then(({ data }) => {
-        if (data.name) {
-          let already = false;
-          characters.forEach((item) => {
-            if (item.id === data.id) already = true;
-          });
-          if (!already) {
-            setCharacters((oldChars) => [...oldChars, data]); // Callback donde hara esto con los componentes que ya tenga
-            // ^ El valor que ya tenia
-          }
-        } else {
-          window.alert("¡Ingrese un ID valido!");
-        }
-      })
-      .catch((error) => alert("No existe ese ID, " + error));
+  async function onSearch(id) {
+    //! Bug:
+    // State array takes some time (up to 0.5s) to add char, so If user presses several times
+    // button before those 0.5s, char will add more than once as will validate state characters
+    // and the char wont be added until that time elapsed, never changing already var.
+
+    try {
+      let character = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      character = character.data;
+      let already = false;
+
+      characters.forEach((item) => {
+        if (item.id === character.id) already = true;
+      });
+
+      if (!already) {
+        setCharacters((oldChars) => [...oldChars, character]);
+        // Callback donde hara esto con los componentes que ya tenga
+      } else {
+        window.alert("¡Este personaje ya esta en la lista!");
+      }
+    } catch (error) {
+      alert("No existe ese ID, " + error);
+    }
   }
-  // function login(userData) {
-  //   //  userData has to be an object
-  //   if (userData.password === PASSWORD && userData.email === EMAIL) {
-  //     setAccess(true);
-  //     navigate("/home");
-  //   }
-  // }
 
   function login(userData) {
     const { email, password } = userData;
