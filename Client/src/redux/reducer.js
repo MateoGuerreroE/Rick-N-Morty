@@ -38,6 +38,7 @@ export default function reducer(state = initialState, action) {
         myFavorites: action.payload,
         allCharacters: action.payload,
       };
+
     case FILTER:
       return {
         ...state,

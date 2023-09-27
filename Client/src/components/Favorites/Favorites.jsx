@@ -23,7 +23,13 @@ function Favorites(props) {
     dispatch(filterCards(event.target.value));
   }
 
-  useEffect(() => () => dispatch(filterCards("ALL")), []);
+  useEffect(
+    () => () => {
+      dispatch(filterCards("ALL"));
+      dispatch(orderCards("A"));
+    },
+    []
+  );
 
   return (
     <div className={styledFav.container}>

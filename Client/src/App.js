@@ -34,14 +34,13 @@ function App(props) {
   }
 
   async function onSearch(id) {
-    //! Bug:
+    //! REACTState Bug:
     // State array takes some time (up to 0.5s) to add char, so If user presses several times
     // button before those 0.5s, char will add more than once as will validate state characters
     // and the char wont be added until that time elapsed, never changing already var.
-
     try {
       let character = await axios(
-        `http://localhost:3001/rickandmorty/character/${id}`
+        `http://${window.location.hostname}:3001/rickandmorty/character/${id}`
       );
       character = character.data;
       let already = false;
@@ -61,17 +60,30 @@ function App(props) {
     }
   }
 
-  function login(userData) {
-    const { email, password } = userData;
-    const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`)
-      .then(({ data }) => {
-        const { access } = data;
-        setAccess(data);
-        access && navigate("/home");
-      })
-      .catch((error) => console.log("El pepe"));
-  }
+  // function login(userData) {
+  //   const { email, password } = userData;
+  //   const URL = "http://localhost:3001/rickandmorty/login/";
+  //   axios(URL + `?email=${email}&password=${password}`)
+  //     .then(({ data }) => {
+  //       const { access } = data;
+  //       setAccess(data);
+  //       access && navigate("/home");
+  //     })
+  //     .catch((error) => console.log("El pepe"));
+  // }
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
+      const URL = `http://${window.location.hostname}:3001/rickandmorty/login/`;
+      const { access } = (
+        await axios(URL + `?email=${email}&password=${password}`)
+      ).data;
+      setAccess(access);
+      access && navigate("/home");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   function logOut() {
     setAccess(false);

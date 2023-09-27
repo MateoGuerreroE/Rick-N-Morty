@@ -11,7 +11,9 @@ export default function Detail() {
   const { id } = useParams();
 
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
+    axios(
+      `http://${window.location.hostname}:3001/rickandmorty/character/${id}`
+    )
       .then(({ data }) => {
         if (data.name) {
           setCharacter(data);
