@@ -18,7 +18,7 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 30vw;
-  height: 4vh;
+  height: 5vh;
   align-self: center;
   position: absolute;
   align-items: center;
@@ -37,7 +37,13 @@
   font-weight: bold;
   border-radius: 7px;
   outline: none;
-  font-size: medium;
+  font-size: 0.9em;
   appearance: none;
   background: url("../../content/60995.png") 96% / 10% no-repeat #f3ab0e;
+}
+
+@media (max-width: 1500px) {
+  .filter select {
+    font-size: 0.6em;
+  }
 }

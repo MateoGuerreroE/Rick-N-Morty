@@ -19,6 +19,17 @@
   backdrop-filter: blur(2px);
   padding: 1em;
 }
+.backArr {
+  position: absolute;
+  left: 90%;
+  top: 10%;
+  width: 3%;
+  height: 6%;
+  &:hover {
+    filter: invert(1);
+    cursor: pointer;
+  }
+}
 
 .data {
   display: flex;
@@ -28,7 +39,7 @@
   color: azure;
 }
 
-.container img {
+.mainImg {
   width: 30%;
   height: 65%;
   border-radius: 2pc;

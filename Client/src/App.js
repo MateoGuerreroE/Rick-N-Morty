@@ -43,8 +43,8 @@ function App(props) {
         `http://${window.location.hostname}:3001/rickandmorty/character/${id}`
       );
       character = character.data;
-      let already = false;
 
+      let already = false;
       characters.forEach((item) => {
         if (item.id === character.id) already = true;
       });

@@ -19,9 +19,26 @@
   transition: background 0.08s ease-in-out;
 }
 
+.button1:before {
+  content: "Random character";
+}
+.button2:before {
+  content: "Add character";
+}
+
+@media (max-width: 1550px) {
+  .button1:before {
+    content: "Random";
+  }
+  .button2:before {
+    content: "Add";
+  }
+}
+
 .divContainer button:hover {
   background-color: rgb(241, 197, 143);
   transform: scale(1.05);
+  cursor: pointer;
 }
 
 .divContainer input {

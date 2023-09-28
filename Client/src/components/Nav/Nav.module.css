@@ -37,4 +37,5 @@
 .Bcontainer button:hover {
   background-color: #7eb7e2;
   transform: scale(1.05);
+  cursor: pointer;
 }

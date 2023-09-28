@@ -1,15 +1,63 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  margin-top: 10vw;
+.container {
+  width: 100%;
+  height: 94vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  height: 40em;
+  width: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons img {
+  width: 57%;
+  height: 17%;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 0 0.5em 0.5em 0;
   backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.226);
+  border-left: 0;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.226);
+    box-shadow: 9px 4px 5px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+}
+
+.card {
+  text-align: center;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  background-color: rgba(82, 82, 82, 0.226);
+  width: 27em;
+  height: 40em;
+  border-radius: 0.5em;
+}
+
+.card h3,
+p {
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}
+
+.card p {
+  color: rgb(185, 185, 185);
+}
+
+.card img {
+  border-radius: 0.5em 0.5em 0 0;
 }
 
 .title {
-  color: grey;
-  font-size: 18px;
+  color: black;
+  font-weight: bolder;
+  font-size: 25px;
 }
 
 .card button {

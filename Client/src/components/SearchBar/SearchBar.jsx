@@ -11,20 +11,22 @@ export default function SearchBar(props) {
 
   const sendID = () => {
     props.onSearch(id);
+    setID("");
   };
 
   return (
     <div className={styledSBar.divContainer}>
-      <button onClick={() => props.onSearch(Math.floor(Math.random() * 824))}>
-        Random Character
-      </button>
+      <button
+        className={styledSBar.button1}
+        onClick={() => props.onSearch(Math.floor(Math.random() * 826))}
+      ></button>
       <input
         type="search"
         value={id}
         onChange={handleChange}
         placeholder="ID..."
       />
-      <button onClick={sendID}>Add Character</button>
+      <button className={styledSBar.button2} onClick={sendID}></button>
     </div>
   );
 }
