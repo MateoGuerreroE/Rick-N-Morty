@@ -7,15 +7,15 @@ const Nav = (props) => {
     <div className={styledNav.container}>
       <div className={styledNav.Bcontainer}>
         <NavLink to="/home">
-          <button>Home</button>
+          <button className={styledNav.button1}></button>
         </NavLink>
 
         <NavLink to="/about">
-          <button>About</button>
+          <button className={styledNav.button2}></button>
         </NavLink>
 
         <NavLink to="/favorites">
-          <button>Favorites</button>
+          <button className={styledNav.button3}></button>
         </NavLink>
       </div>
       <SearchBar onSearch={props.onSearch} />

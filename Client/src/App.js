@@ -19,7 +19,7 @@ function App(props) {
 
   const [characters, setCharacters] = useState([]);
   const navigate = useNavigate(); // Command for nav
-  const [access, setAccess] = useState(false); // starts access as false //! SET AS TRUE FOR DEVELOPMENT PRPSES
+  const [acc, setAccess] = useState(false); // starts access as false //! IF THIS IS TRUE IS FOR DEV PURPOSES
 
   // HANDLERS OR MODIFYERS
 
@@ -34,10 +34,6 @@ function App(props) {
   }
 
   async function onSearch(id) {
-    //! REACTState Bug:
-    // State array takes some time (up to 0.5s) to add char, so If user presses several times
-    // button before those 0.5s, char will add more than once as will validate state characters
-    // and the char wont be added until that time elapsed, never changing already var.
     try {
       let character = await axios(
         `http://${window.location.hostname}:3001/rickandmorty/character/${id}`
@@ -59,18 +55,6 @@ function App(props) {
       alert("No existe ese ID, " + error);
     }
   }
-
-  // function login(userData) {
-  //   const { email, password } = userData;
-  //   const URL = "http://localhost:3001/rickandmorty/login/";
-  //   axios(URL + `?email=${email}&password=${password}`)
-  //     .then(({ data }) => {
-  //       const { access } = data;
-  //       setAccess(data);
-  //       access && navigate("/home");
-  //     })
-  //     .catch((error) => console.log("El pepe"));
-  // }
   const login = async (userData) => {
     try {
       const { email, password } = userData;
@@ -95,8 +79,8 @@ function App(props) {
 
   useEffect(() => {
     // This makes that everytime access is changed (even since generated) will evaluate
-    !access && navigate("/"); // false as true, making condition after && to evaluate and keeps user on path '/'
-  }, [access]); // once access is true, sets as false and wont do a thing.
+    !acc && navigate("/"); // false as true, making condition after && to evaluate and keeps user on path '/'
+  }, [acc]); // once access is true, sets as false and wont do a thing.
 
   // RENDER
 
@@ -109,7 +93,13 @@ function App(props) {
       <Routes>
         <Route
           path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
+          element={
+            <Cards
+              characters={characters}
+              onClose={onClose}
+              setCharacters={setCharacters}
+            />
+          }
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />

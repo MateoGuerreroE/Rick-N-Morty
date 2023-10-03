@@ -19,10 +19,40 @@
   backdrop-filter: blur(2px);
   padding: 1em;
 }
+
+.info {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.InfCont h1 {
+  font-size: 6vw;
+  margin-bottom: 3vh;
+}
+
+.infoCont {
+  width: 50%;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.status p {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 .backArr {
   position: absolute;
-  left: 90%;
-  top: 10%;
+  left: 92%;
+  top: 7%;
   width: 3%;
   height: 6%;
   &:hover {
@@ -35,12 +65,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 550px;
+  align-items: center;
+  height: 65%;
+  width: 50%;
   color: azure;
 }
 
 .mainImg {
-  width: 30%;
-  height: 65%;
+  width: 25vw;
+  height: 25vw;
   border-radius: 2pc;
 }

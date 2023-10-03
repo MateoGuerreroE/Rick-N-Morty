@@ -6,3 +6,33 @@
   padding: 2vw;
   margin: 2vw;
 }
+
+.remove {
+  position: absolute;
+  background-color: inherit;
+  top: 8%;
+  left: 92%;
+  width: 6vw;
+  height: 2pc;
+  border-radius: 8px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  transition: transform 0.2s;
+  transition: background 0.08s ease-in-out;
+  &:hover {
+    background-color: #7eb7e2;
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+}
+
+.remove:before {
+  content: "Remove all";
+}
+
+@media (max-width: 1550px) {
+  .remove:before {
+    content: "🗑️";
+  }
+}

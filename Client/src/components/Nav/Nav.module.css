@@ -16,6 +16,28 @@
   justify-content: space-around;
 }
 
+.button1:before {
+  content: "Home";
+}
+.button2:before {
+  content: "About";
+}
+.button3:before {
+  content: "Favorites";
+}
+
+@media (max-width: 750px) {
+  .button1:before {
+    content: "🏚️";
+  }
+  .button2:before {
+    content: "📋";
+  }
+  .button3:before {
+    content: "🖤";
+  }
+}
+
 .Bcontainer button {
   width: 10vw;
   height: 2pc;

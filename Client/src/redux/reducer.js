@@ -7,15 +7,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    // case ADD_FAV:
-    //   return {
-    //     ...state,
-    //     myFavorites: [...state.allCharacters, action.payload],
-    //     allCharacters: [...state.allCharacters, action.payload], // Esto tambien se podria hacer solo cambiando allCharacters por myFavorites, para evitar el doble cambio en REMOVE_FAV
-    //     // Asi es mas entendible, dado que Favorites sera siempre lo que este en AllFavorites cuando se use ADD.
-    //     // Esto tambien se hace para que cuando se entre a Favorites de una renderice todos.
-
-    //     //! Em caso de que se use con allCharacters meramente se deben cambiar varias cosas aca y en el map de cards, se debe tomar allcharacters y no myFavorites
+    //     //! En caso de que se use con allCharacters meramente se deben cambiar varias cosas aca y en el map de cards, se debe tomar allcharacters y no myFavorites
     //   };
     case ADD_FAV:
       return {
@@ -23,15 +15,7 @@ export default function reducer(state = initialState, action) {
         myFavorites: action.payload,
         allCharacters: action.payload,
       };
-    // case REMOVE_FAV:
-    //   const filteredFavs = state.myFavorites.filter(
-    //     (fav) => fav.id !== Number(action.payload)
-    //   );
-    //   return {
-    //     ...state,
-    //     myFavorites: filteredFavs,
-    //     allCharacters: filteredFavs,
-    //   };
+
     case REMOVE_FAV:
       return {
         ...state,
@@ -61,6 +45,7 @@ export default function reducer(state = initialState, action) {
           }
         }),
       };
+
     default:
       return { ...state };
   }

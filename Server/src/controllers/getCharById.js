@@ -6,8 +6,18 @@ async function getCharById(req, res) {
   try {
     const ID = req.params.id;
     const character = await axios.get(URL + ID);
-    const { id, status, name, species, origin, image, gender } = character.data;
-    let charData = { id, status, name, species, origin, image, gender };
+    const { id, status, name, species, origin, image, gender, episode } =
+      character.data;
+    let charData = {
+      id,
+      status,
+      name,
+      species,
+      origin,
+      image,
+      gender,
+      episode,
+    };
     if (charData.name) {
       return res.json(charData);
     }

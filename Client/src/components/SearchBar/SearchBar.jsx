@@ -25,6 +25,7 @@ export default function SearchBar(props) {
         value={id}
         onChange={handleChange}
         placeholder="ID..."
+        className={styledSBar.inpt}
       />
       <button className={styledSBar.button2} onClick={sendID}></button>
     </div>

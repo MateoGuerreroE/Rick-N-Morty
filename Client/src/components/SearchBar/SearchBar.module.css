@@ -35,6 +35,15 @@
   }
 }
 
+@media (max-width: 750px) {
+  .button1:before {
+    content: "♻️";
+  }
+  .button2:before {
+    content: "➕";
+  }
+}
+
 .divContainer button:hover {
   background-color: rgb(241, 197, 143);
   transform: scale(1.05);
@@ -45,7 +54,7 @@
   font-family: "Roboto", sans-serif;
   color: #333;
   font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  padding: 10px;
   border-radius: 0.2rem;
   background-color: #f3ab0e;
   border: none;

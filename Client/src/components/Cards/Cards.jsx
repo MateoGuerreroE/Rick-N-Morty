@@ -6,6 +6,12 @@ export default function Cards(props) {
 
   return (
     <div className={styledCards.container}>
+      {characters.length ? (
+        <button
+          onClick={() => props.setCharacters([])}
+          className={styledCards.remove}
+        ></button>
+      ) : null}
       {characters.map((character) => (
         <Card
           key={character.id}

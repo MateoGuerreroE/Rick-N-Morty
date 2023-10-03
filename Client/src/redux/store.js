@@ -9,10 +9,3 @@ const store = createStore(
   composeEnhancer(applyMiddleware(thunk)) // esta línea es para poder hacer peticiones a un server
 );
 export default store;
-
-// import { createStore } from "redux";
-// import reducer from "./reducer";
-
-// const store = createStore(reducer, null);
-
-// export default store;
