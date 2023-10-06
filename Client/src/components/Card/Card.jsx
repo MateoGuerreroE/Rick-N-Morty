@@ -18,7 +18,16 @@ function Card(props) {
       props.removeFav(props.id);
     } else {
       setFav(true);
-      props.addFav(props);
+      let utilInfo = {
+        id: props.id,
+        name: props.name,
+        status: props.status,
+        species: props.species,
+        gender: props.gender,
+        origin: props.origin,
+        image: props.image,
+      };
+      props.addFav(utilInfo);
     }
   }
 
